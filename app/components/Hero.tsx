@@ -1,5 +1,6 @@
 "use client";
 
+import { AnimatedShinyText } from "@/components/ui/animated-shiny-text";
 import { motion } from "framer-motion";
 import { ArrowRight, Play } from "lucide-react";
 import Image from "next/image";
@@ -10,21 +11,22 @@ export default function Hero() {
             {/* Background Gradients */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-primary/20 rounded-full blur-[120px] -z-10" />
 
-            <div className="max-w-4xl mx-auto text-center space-y-8">
+            <div className="max-w-5xl mx-auto text-center space-y-8">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
                     className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs font-medium text-primary mb-4"
                 >
-                    <span className="relative flex h-2 w-2">
-                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                        <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-                    </span>
-                    <span className="text-[10px] uppercase tracking-widest font-bold">
-                        Accepting New Clients for Q3
-                    </span>
+                    <AnimatedShinyText className="inline-flex gap-2 items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
+                        <span className="relative flex h-2 w-2">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                        </span>
+                        <span className="text-white">Accepting New Clients for Q3</span>
+                    </AnimatedShinyText>
                 </motion.div>
+
 
                 <motion.h1
                     initial={{ opacity: 0, y: 20 }}
@@ -33,7 +35,7 @@ export default function Hero() {
                     className="text-5xl md:text-7xl font-display font-bold tracking-tight leading-tight"
                 >
                     Turn Your Coaching Website <br />
-                    Into a <span className="text-secondary-foreground text-[#fb5d00]">Client-Booking Machine</span>
+                    Into a <span className=" text-primary">Client-Booking Machine</span>
                 </motion.h1>
 
                 <motion.p

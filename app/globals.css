@@ -8,7 +8,7 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-primary: #FB5D00;
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-poppins);
   --font-mono: var(--font-geist-mono);
   --font-display: var(--font-space-grotesk);
   --color-sidebar-ring: var(--sidebar-ring);
@@ -61,7 +61,14 @@
       background-position: calc(100% + var(--shiny-width)) 0;
     }
   }
-}
+
+  --animate-blink-cursor: blink-cursor 1.2s step-end infinite
+;
+  @keyframes blink-cursor {
+  0%, 49% {
+    opacity: 1;}
+  50%, 100% {
+    opacity: 0;}}}
 
 body {
   overflow-x: hidden;
@@ -159,6 +166,7 @@ body {
 
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-poppins), sans-serif;
   }
 
   h1,
