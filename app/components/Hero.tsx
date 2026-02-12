@@ -3,7 +3,8 @@
 import { AnimatedShinyText } from "@/components/ui/animated-shiny-text";
 import { motion } from "framer-motion";
 import { ArrowRight, Play } from "lucide-react";
-import Image from "next/image";
+import Link from "next/link";
+import { useAppSelector } from "@/lib/hooks";
 
 export default function Hero() {
     return (
@@ -53,10 +54,10 @@ export default function Hero() {
                     transition={{ duration: 0.5, delay: 0.3 }}
                     className="flex flex-col sm:flex-row items-center justify-center gap-4"
                 >
-                    <button className="flex items-center gap-2 px-8 py-4 bg-[#fb5d00] text-black rounded-full font-bold hover:bg-[#ff7c2f] transition-transform hover:scale-105">
+                    <Link href={useAppSelector((state) => state.ui.bookingUrl)} target="_blank" className="flex items-center gap-2 px-8 py-4 bg-[#fb5d00] text-black rounded-full font-bold hover:bg-[#ff7c2f] transition-transform hover:scale-105">
                         Let's book a 1:1 Call
                         <ArrowRight className="w-5 h-5" />
-                    </button>
+                    </Link>
                     <button className="flex items-center gap-2 px-8 py-4 bg-white/5 border border-white/10 rounded-full font-bold hover:bg-white/10 transition-colors">
                         <Play className="w-4 h-4 fill-current" />
                         View Portfolio

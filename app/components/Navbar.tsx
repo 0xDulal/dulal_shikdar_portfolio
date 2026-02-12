@@ -1,13 +1,15 @@
 
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import { Menu, X, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useAppDispatch, useAppSelector } from "@/lib/hooks";
+import { toggleMobileMenu, closeMobileMenu } from "@/lib/features/ui/uiSlice";
 
 export default function Navbar() {
-    const [isOpen, setIsOpen] = useState(false);
+    const isOpen = useAppSelector((state) => state.ui.isMobileMenuOpen);
+    const dispatch = useAppDispatch();
 
     const navLinks = [
         { name: "Portfolio", href: "#work" },
@@ -43,7 +45,8 @@ export default function Navbar() {
                     {/* CTA */}
                     <div className="hidden md:block">
                         <Link
-                            href="#contact"
+                            href={useAppSelector((state) => state.ui.bookingUrl)}
+                            target="_blank"
                             className="flex items-center gap-2 px-5 py-2 bg-[#fb5d00] text-black rounded-full text-sm font-semibold hover:bg-[#ff7c2f] transition-colors"
                         >
                             Book a Call
@@ -53,7 +56,7 @@ export default function Navbar() {
                     {/* Mobile Menu Button */}
                     <button
                         className="md:hidden text-white p-1"
-                        onClick={() => setIsOpen(!isOpen)}
+                        onClick={() => dispatch(toggleMobileMenu())}
                     >
                         {isOpen ? <X size={24} /> : <Menu size={24} />}
                     </button>
@@ -74,15 +77,16 @@ export default function Navbar() {
                                 key={link.name}
                                 href={link.href}
                                 className="text-lg font-medium text-gray-300 hover:text-white"
-                                onClick={() => setIsOpen(false)}
+                                onClick={() => dispatch(closeMobileMenu())}
                             >
                                 {link.name}
                             </Link>
                         ))}
                         <Link
-                            href="#contact"
+                            href={useAppSelector((state) => state.ui.bookingUrl)}
+                            target="_blank"
                             className="flex items-center justify-center gap-2 px-5 py-3 bg-primary text-black rounded-full text-base font-semibold"
-                            onClick={() => setIsOpen(false)}
+                            onClick={() => dispatch(closeMobileMenu())}
                         >
                             Let's book a 1:1 Call
                             <ArrowRight className="w-4 h-4" />

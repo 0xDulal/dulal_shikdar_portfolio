@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Space_Grotesk, Poppins } from "next/font/google";
 import "./globals.css";
+import StoreProvider from "./StoreProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -48,7 +49,7 @@ export default function RootLayout({
         />
         {/* Background Overlay */}
         <div className="fixed inset-0 -z-10 bg-black/50" />
-        {children}
+        <StoreProvider>{children}</StoreProvider>
       </body>
     </html>
   );
