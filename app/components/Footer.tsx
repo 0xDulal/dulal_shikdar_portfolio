@@ -8,7 +8,7 @@ export default function Footer() {
         <footer className="pt-24 pb-8 px-6 border-t border-white/5 bg-black/40 backdrop-blur-md text-center relative overflow-hidden">
 
             <div className="max-w-4xl mx-auto mb-20 relative z-10">
-                <h2 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">
+                <h2 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight leading-none">
                     Ready to turn visitors <br />
                     into <span className="text-[#fb5d00]">paying clients?</span>
                 </h2>

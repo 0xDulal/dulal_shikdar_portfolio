@@ -32,7 +32,7 @@ export default function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.1 }}
-                    className="text-5xl md:text-7xl font-display font-bold tracking-tight leading-tight"
+                    className="text-5xl md:text-7xl font-display font-bold tracking-tight leading-none"
                 >
                     Turn Your Coaching Website <br />
                     Into a <span className=" text-primary">Client-Booking Machine</span>

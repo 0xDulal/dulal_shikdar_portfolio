@@ -47,7 +47,7 @@ export default function Features() {
             <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-16">
                     <span className="text-xs font-bold tracking-widest text-[#fb5d00] uppercase mb-4 block">Why Work With Us</span>
-                    <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                    <h2 className="text-4xl md:text-5xl font-bold mb-4 leading-none">
                         The Ecosystem for <br />
                         <span className="text-[#fb5d00]">High-Ticket Growth</span>
                     </h2>
