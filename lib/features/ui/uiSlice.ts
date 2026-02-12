@@ -3,11 +3,13 @@ import { createSlice } from '@reduxjs/toolkit'
 export interface UIState {
     isMobileMenuOpen: boolean
     bookingUrl: string
+    portfolioUrl: string
 }
 
 const initialState: UIState = {
     isMobileMenuOpen: false,
     bookingUrl: "https://cal.com/0xdulal/website-growth-consultancy",
+    portfolioUrl: "https://dulalshikdar.me",
 }
 
 export const uiSlice = createSlice({

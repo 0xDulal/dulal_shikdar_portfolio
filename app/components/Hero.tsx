@@ -58,10 +58,10 @@ export default function Hero() {
                         Let's book a 1:1 Call
                         <ArrowRight className="w-5 h-5" />
                     </Link>
-                    <button className="flex items-center gap-2 px-8 py-4 bg-white/5 border border-white/10 rounded-full font-bold hover:bg-white/10 transition-colors">
+                    <Link href={useAppSelector((state) => state.ui.portfolioUrl)} target="_blank" className="flex items-center gap-2 px-8 py-4 bg-white/5 border border-white/10 rounded-full font-bold hover:bg-white/10 transition-colors">
                         <Play className="w-4 h-4 fill-current" />
                         View Portfolio
-                    </button>
+                    </Link>
                 </motion.div>
 
                 <motion.div
