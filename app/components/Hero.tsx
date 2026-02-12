@@ -17,15 +17,20 @@ export default function Hero() {
                     transition={{ duration: 0.5 }}
                     className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs font-medium text-primary mb-4"
                 >
-                    <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                    ACCEPTING NEW CLIENTS FOR Q3
+                    <span className="relative flex h-2 w-2">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                        <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                    </span>
+                    <span className="text-[10px] uppercase tracking-widest font-bold">
+                        Accepting New Clients for Q3
+                    </span>
                 </motion.div>
 
                 <motion.h1
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.1 }}
-                    className="text-5xl md:text-7xl font-bold tracking-tight leading-tight"
+                    className="text-5xl md:text-7xl font-display font-bold tracking-tight leading-tight"
                 >
                     Turn Your Coaching Website <br />
                     Into a <span className="text-secondary-foreground text-[#fb5d00]">Client-Booking Machine</span>
