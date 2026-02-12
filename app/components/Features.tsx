@@ -52,19 +52,33 @@ export default function Features() {
                         <span className="text-[#fb5d00]">High-Ticket Growth</span>
                     </h2>
                     <p className="text-gray-400 max-w-2xl mx-auto">
-                        We fuse psychology, design, and technology to build platforms that don't just exist; they sell.
+                        We fuse psychology, design, and technology to build platforms that don&apos;t just exist; they sell.
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <motion.div
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true }}
+                    variants={{
+                        hidden: { opacity: 0 },
+                        show: {
+                            opacity: 1,
+                            transition: {
+                                staggerChildren: 0.1
+                            }
+                        }
+                    }}
+                    className="grid grid-cols-1 md:grid-cols-3 gap-6"
+                >
                     {features.map((feature, index) => (
                         <motion.div
                             key={index}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
-                            className={`p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-primary/50 transition-colors group ${feature.colSpan === 2 ? "md:col-span-2" : ""
+                            variants={{
+                                hidden: { opacity: 0, y: 20 },
+                                show: { opacity: 1, y: 0 }
+                            }}
+                            className={`p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-primary/50 transition-all duration-300 group hover:shadow-2xl hover:shadow-primary/10 ${feature.colSpan === 2 ? "md:col-span-2" : ""
                                 }`}
                         >
                             <div className="flex justify-between items-start mb-6">
@@ -72,19 +86,19 @@ export default function Features() {
                                     <feature.icon className="w-6 h-6 text-white group-hover:text-primary transition-colors" />
                                 </div>
                                 {feature.tag && (
-                                    <span className="text-[12px] font-normal px-2 py-1 rounded bg-[#fb5d00] text-white">
+                                    <span className="text-[12px] font-semibold px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary">
                                         {feature.tag}
                                     </span>
                                 )}
                             </div>
 
-                            <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
-                            <p className="text-gray-400 text-sm leading-relaxed">
+                            <h3 className="text-xl font-bold mb-3 text-white group-hover:text-primary transition-colors">{feature.title}</h3>
+                            <p className="text-gray-400 text-sm leading-relaxed group-hover:text-gray-300 transition-colors">
                                 {feature.description}
                             </p>
                         </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </div>
         </section>
     );

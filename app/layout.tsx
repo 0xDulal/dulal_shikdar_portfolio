@@ -40,18 +40,27 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${spaceGrotesk.variable} ${poppins.variable} font-sans antialiased min-h-screen relative bg-transparent text-foreground`}
+        className={`${geistSans.variable} ${geistMono.variable} ${spaceGrotesk.variable} ${poppins.variable} font-sans antialiased min-h-screen relative bg-black text-foreground selection:bg-primary selection:text-white`}
       >
-        {/* Background Gradient */}
-        <div
-          className="fixed inset-0 -z-20"
-          style={{
-            background:
-              "radial-gradient(125% 125% at 50% 100%, #000000 40%, #fb5d00 100%)",
-          }}
-        />
-        {/* Background Overlay */}
-        <div className="fixed inset-0 -z-10 bg-black/50" />
+        {/* Modern Animated Background */}
+        <div className="fixed inset-0 -z-30 overflow-hidden pointer-events-none">
+          <div
+            className="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] bg-primary/20 rounded-full blur-[120px] animate-pulse"
+            style={{ animationDuration: '8s' }}
+          />
+          <div
+            className="absolute top-[20%] -right-[5%] w-[30%] h-[30%] bg-blue-500/10 rounded-full blur-[100px] animate-pulse"
+            style={{ animationDuration: '12s', animationDelay: '2s' }}
+          />
+          <div
+            className="absolute -bottom-[10%] left-[20%] w-[50%] h-[50%] bg-primary/10 rounded-full blur-[150px] animate-pulse"
+            style={{ animationDuration: '10s', animationDelay: '1s' }}
+          />
+        </div>
+
+        {/* Background Overlay for Glassmorphism */}
+        <div className="fixed inset-0 -z-10 bg-black/40 backdrop-blur-[2px]" />
+
         <StoreProvider>{children}</StoreProvider>
       </body>
     </html>

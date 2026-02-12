@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 import { Check, ArrowRight } from "lucide-react";
+import Link from "next/link";
+import { useAppSelector } from "@/lib/hooks";
 
 const features = [
     "Custom High-Converting Design",
@@ -44,10 +46,14 @@ export default function Pricing() {
                             <p className="text-xs text-gray-500 mt-2">Payment plans available upon request.</p>
                         </div>
 
-                        <button className="w-full py-4 bg-[#fb5d00] text-white font-bold rounded-xl mt-4 hover:bg-[#ff7c2f] transition-colors flex justify-center items-center gap-2">
-                            Let's book a 1:1 Call
+                        <Link
+                            href={useAppSelector((state) => state.ui.bookingUrl)}
+                            target="_blank"
+                            className="w-full py-4 bg-[#fb5d00] text-white font-bold rounded-xl mt-4 hover:bg-[#ff7c2f] transition-all hover:scale-[1.02] active:scale-[0.98] flex justify-center items-center gap-2 shadow-lg shadow-primary/20"
+                        >
+                            Let&apos;s book a 1:1 Call
                             <ArrowRight className="w-4 h-4" />
-                        </button>
+                        </Link>
                         <p className="text-[10px] text-center text-gray-500">100% Satisfaction Guarantee</p>
                     </div>
 

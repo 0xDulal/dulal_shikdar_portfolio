@@ -4,6 +4,7 @@ import { AnimatedShinyText } from "@/components/ui/animated-shiny-text";
 import { motion } from "framer-motion";
 import { ArrowRight, Play } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { useAppSelector } from "@/lib/hooks";
 import { TextAnimate } from "@/components/ui/text-animate";
 
@@ -30,56 +31,67 @@ export default function Hero() {
                 </motion.div>
 
 
-                <h1 className="text-5xl md:text-7xl font-display font-bold tracking-tight leading-none">
-                    <TextAnimate animation="blurIn" by="character" as="span" children="Turn Your Coaching Website" />
+                <h1 className="text-4xl md:text-7xl font-display font-bold tracking-tight leading-[1.1] mb-4">
+                    <TextAnimate animation="blurInUp" by="word" as="span">Turn Your Coaching Website</TextAnimate>
                     <br />
-                    <TextAnimate animation="blurIn" by="character" as="span" delay={0.4} children="Into a " />
-                    <TextAnimate animation="blurIn" by="character" as="span" className="text-primary" delay={0.6} children="Client-Booking Machine" />
+                    <TextAnimate animation="blurInUp" by="word" as="span" delay={0.3}>Into a </TextAnimate>
+                    <TextAnimate animation="blurInUp" by="word" as="span" className="text-primary italic" delay={0.5}>Client-Booking Machine</TextAnimate>
                 </h1>
 
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
-                    className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto"
+                    transition={{ duration: 0.8, delay: 0.6 }}
+                    className="text-lg md:text-2xl text-gray-400 max-w-3xl mx-auto leading-relaxed"
                 >
-                    We build high-converting websites for coaches & trainers — so you can focus on transforming lives while your website does the selling.
+                    We design premium, high-converting platforms for world-class coaches.
+                    <span className="block text-white font-medium mt-2">Stop settling for mediocre. Start scaling with authority.</span>
                 </motion.p>
 
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.3 }}
-                    className="flex flex-col sm:flex-row items-center justify-center gap-4"
+                    transition={{ duration: 0.5, delay: 0.8 }}
+                    className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-4"
                 >
-                    <Link href={useAppSelector((state) => state.ui.bookingUrl)} target="_blank" className="flex items-center gap-2 px-8 py-4 bg-[#fb5d00] text-white rounded-full font-bold hover:bg-[#ff7c2f] transition-transform hover:scale-105">
-                        Let's book a 1:1 Call
-                        <ArrowRight className="w-5 h-5" />
+                    <Link href={useAppSelector((state) => state.ui.bookingUrl)} target="_blank" className="relative group overflow-hidden px-10 py-5 bg-[#fb5d00] text-white rounded-full font-bold transition-all hover:scale-105 active:scale-95 shadow-xl shadow-primary/20">
+                        <span className="relative z-10 flex items-center gap-2">
+                            Strategy Session <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                        </span>
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
                     </Link>
-                    <Link href={useAppSelector((state) => state.ui.portfolioUrl)} target="_blank" className="flex items-center gap-2 px-8 py-4 bg-white/5 border border-white/10 rounded-full font-bold hover:bg-white/10 transition-colors">
-                        <Play className="w-4 h-4 fill-current" />
-                        View Portfolio
+                    <Link href={useAppSelector((state) => state.ui.portfolioUrl)} target="_blank" className="flex items-center gap-2 px-10 py-5 bg-white/5 border border-white/10 rounded-full font-bold hover:bg-white/10 hover:border-white/20 transition-all">
+                        <Play className="w-4 h-4 fill-current text-primary" />
+                        Our Process
                     </Link>
                 </motion.div>
 
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ duration: 1, delay: 0.5 }}
-                    className="pt-12 flex justify-center items-center gap-4"
+                    transition={{ duration: 1, delay: 1.2 }}
+                    className="pt-16 flex flex-col items-center gap-4"
                 >
-                    <div className="flex -space-x-2">
+                    <div className="flex -space-x-4">
                         {[1, 2, 3, 4].map((i) => (
-                            <div key={i} className="w-10 h-10 rounded-full border-2 border-primary overflow-hidden">
-                                <img
-                                    src={`https://i.pravatar.cc/1080?img=${i + 10}`}
-                                    alt="User"
-                                    className="w-full h-full object-cover"
+                            <div key={i} className="relative w-12 h-12 rounded-full border-2 border-primary bg-black overflow-hidden ring-4 ring-black/50">
+                                <Image
+                                    src={i === 1 ? "/images/avatars/avatar_1.png" : `https://i.pravatar.cc/100?img=${i + 20}`}
+                                    alt="Expert Coach"
+                                    fill
+                                    className="object-cover grayscale hover:grayscale-0 transition-all duration-500"
                                 />
                             </div>
                         ))}
                     </div>
-                    <p className="text-sm text-gray-500">Trusted by 100+ Coaches</p>
+                    <div className="flex flex-col items-center gap-1">
+                        <div className="flex gap-1">
+                            {[1, 2, 3, 4, 5].map((s) => (
+                                <span key={s} className="text-primary text-lg">★</span>
+                            ))}
+                        </div>
+                        <p className="text-sm font-medium text-gray-400">Trusted by <span className="text-white">100+ Seven-Figure Coaches</span></p>
+                    </div>
                 </motion.div>
 
                 {/* Logos */}

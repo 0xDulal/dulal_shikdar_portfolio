@@ -10,6 +10,7 @@ import { toggleMobileMenu, closeMobileMenu } from "@/lib/features/ui/uiSlice";
 
 export default function Navbar() {
     const isOpen = useAppSelector((state) => state.ui.isMobileMenuOpen);
+    const bookingUrl = useAppSelector((state) => state.ui.bookingUrl);
     const dispatch = useAppDispatch();
 
     const navLinks = [
@@ -60,7 +61,7 @@ export default function Navbar() {
                     {/* CTA */}
                     <div className="hidden md:block">
                         <Link
-                            href={useAppSelector((state) => state.ui.bookingUrl)}
+                            href={bookingUrl}
                             target="_blank"
                             className="flex items-center gap-2 px-5 py-2 bg-[#fb5d00] text-white rounded-full text-sm font-semibold hover:bg-[#ff7c2f] transition-colors"
                         >
@@ -98,12 +99,12 @@ export default function Navbar() {
                             </Link>
                         ))}
                         <Link
-                            href={useAppSelector((state) => state.ui.bookingUrl)}
+                            href={bookingUrl}
                             target="_blank"
                             className="flex items-center justify-center gap-2 px-5 py-3 bg-primary text-white rounded-full text-base font-semibold"
                             onClick={() => dispatch(closeMobileMenu())}
                         >
-                            Let's book a 1:1 Call
+                            Let&apos;s book a 1:1 Call
                             <ArrowRight className="w-4 h-4" />
                         </Link>
                     </motion.div>
