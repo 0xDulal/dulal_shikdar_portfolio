@@ -2,6 +2,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
@@ -32,11 +33,15 @@ export default function Navbar() {
                     className="max-w-5xl mx-auto bg-[#1C1C1C]/80 backdrop-blur-md border border-white/10 rounded-full px-6 py-3 flex items-center justify-between shadow-lg shadow-black/20"
                 >
                     {/* Logo */}
-                    <Link href="/" className="flex items-center gap-2">
-                        <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
-                            <span className="text-white font-bold text-sm">P</span>
+                    <Link href="/" className="flex items-center gap-3">
+                        <div className="relative w-[200px] h-[25px]">
+                            <Image
+                                src="/images/Dulal_Shikdar_logo.png"
+                                alt="Dulal Shikdar Logo"
+                                fill
+                                className="object-contain"
+                            />
                         </div>
-                        <span className="font-bold text-white tracking-tight">Portfolio</span>
                     </Link>
 
                     {/* Desktop Nav */}

@@ -29,8 +29,8 @@ export default function Footer() {
             </div>
 
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-xs text-gray-600 border-t border-white/5 pt-8">
-                <p>contact@designagency.com</p>
-                <p>© 2024 Agency. All rights reserved.</p>
+                <p>shikdardulal@gmail.com</p>
+                <p>© 2024 Dulal Shikdar. All rights reserved.</p>
             </div>
         </footer>
     );

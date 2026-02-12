@@ -6,21 +6,21 @@ import Image from "next/image";
 
 const projects = [
     {
-        title: "Finra",
-        category: "Fintech",
-        image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=1600", // Placeholder
+        title: "Idievo",
+        category: "Automation",
+        image: "/featured_images/idievo.jpg",
         color: "bg-emerald-500",
     },
     {
-        title: "Reimagine",
-        category: "Crypto",
-        image: "https://images.unsplash.com/photo-1642104704074-907c0698cbd9?auto=format&fit=crop&q=80&w=1600", // Placeholder
+        title: "Asif Reza",
+        category: "Portfolio",
+        image: "/featured_images/asif-reza.webp",
         color: "bg-orange-500",
     },
     {
-        title: "Smart AI",
-        category: "SaaS",
-        image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1600", // Placeholder
+        title: "Cheshire Removals",
+        category: "Moving Company",
+        image: "/featured_images/removals.webp",
         color: "bg-blue-500",
     },
 ];
