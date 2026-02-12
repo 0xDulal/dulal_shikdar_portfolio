@@ -67,7 +67,7 @@ export default function Testimonials() {
                                 </div>
                             </div>
 
-                            <div className="mt-6 inline-block px-3 py-1 rounded bg-[#fb5d00]/10 text-[#fb5d00] text-xs font-bold border border-[#fb5d00]/20">
+                            <div className="mt-6 inline-block px-3 py-1 rounded bg-[#fb5d00]/10 text-[#fb5d00] text-[12px] font-normal border border-[#fb5d00]/20">
                                 {testimonial.tag}
                             </div>
 

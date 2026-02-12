@@ -16,7 +16,7 @@ export default function Footer() {
                 <p className="text-gray-400 mb-8 max-w-xl mx-auto">
                     Stop leaving money on the table with a website that doesn't convert. Let's build your empire.
                 </p>
-                <Link href={useAppSelector((state) => state.ui.bookingUrl)} target="_blank" className="inline-flex items-center gap-2 px-8 py-4 bg-[#fb5d00] text-black rounded-full font-bold hover:bg-[#ff7c2f] transition-transform hover:scale-105">
+                <Link href={useAppSelector((state) => state.ui.bookingUrl)} target="_blank" className="inline-flex items-center gap-2 px-8 py-4 bg-[#fb5d00] text-white rounded-full font-bold hover:bg-[#ff7c2f] transition-transform hover:scale-105">
                     Let's book a 1:1 Call
                     <ArrowRight className="w-5 h-5" />
                 </Link>

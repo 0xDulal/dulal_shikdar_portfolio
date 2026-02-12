@@ -30,7 +30,7 @@ export default function Pricing() {
                     className="rounded-3xl border border-white/10 bg-white/5 p-8 md:p-12 flex flex-col md:flex-row gap-12"
                 >
                     <div className="flex-1 space-y-6">
-                        <div className="inline-block px-3 py-1 bg-[#fb5d00] text-black text-xs font-bold rounded mb-2">MOST POPULAR</div>
+                        <div className="inline-block px-3 py-1 bg-[#fb5d00] text-white text-[12px] font-normal rounded mb-2">MOST POPULAR</div>
                         <h3 className="text-3xl font-bold">The Authority Package</h3>
                         <p className="text-gray-400 leading-relaxed">
                             Everything you need to launch, look professional, and start booking clients immediately. We handle the tech, you handle the business.
@@ -44,7 +44,7 @@ export default function Pricing() {
                             <p className="text-xs text-gray-500 mt-2">Payment plans available upon request.</p>
                         </div>
 
-                        <button className="w-full py-4 bg-[#fb5d00] text-black font-bold rounded-xl mt-4 hover:bg-[#ff7c2f] transition-colors flex justify-center items-center gap-2">
+                        <button className="w-full py-4 bg-[#fb5d00] text-white font-bold rounded-xl mt-4 hover:bg-[#ff7c2f] transition-colors flex justify-center items-center gap-2">
                             Let's book a 1:1 Call
                             <ArrowRight className="w-4 h-4" />
                         </button>

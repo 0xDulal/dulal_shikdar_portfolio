@@ -72,7 +72,7 @@ export default function Features() {
                                     <feature.icon className="w-6 h-6 text-white group-hover:text-primary transition-colors" />
                                 </div>
                                 {feature.tag && (
-                                    <span className="text-[10px] font-bold px-2 py-1 rounded bg-[#fb5d00] text-black">
+                                    <span className="text-[12px] font-normal px-2 py-1 rounded bg-[#fb5d00] text-white">
                                         {feature.tag}
                                     </span>
                                 )}

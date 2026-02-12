@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Play } from "lucide-react";
 import Link from "next/link";
 import { useAppSelector } from "@/lib/hooks";
+import { TextAnimate } from "@/components/ui/text-animate";
 
 export default function Hero() {
     return (
@@ -29,15 +30,12 @@ export default function Hero() {
                 </motion.div>
 
 
-                <motion.h1
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.1 }}
-                    className="text-5xl md:text-7xl font-display font-bold tracking-tight leading-none"
-                >
-                    Turn Your Coaching Website <br />
-                    Into a <span className=" text-primary">Client-Booking Machine</span>
-                </motion.h1>
+                <h1 className="text-5xl md:text-7xl font-display font-bold tracking-tight leading-none">
+                    <TextAnimate animation="blurIn" by="character" as="span" children="Turn Your Coaching Website" />
+                    <br />
+                    <TextAnimate animation="blurIn" by="character" as="span" delay={0.4} children="Into a " />
+                    <TextAnimate animation="blurIn" by="character" as="span" className="text-primary" delay={0.6} children="Client-Booking Machine" />
+                </h1>
 
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
@@ -54,7 +52,7 @@ export default function Hero() {
                     transition={{ duration: 0.5, delay: 0.3 }}
                     className="flex flex-col sm:flex-row items-center justify-center gap-4"
                 >
-                    <Link href={useAppSelector((state) => state.ui.bookingUrl)} target="_blank" className="flex items-center gap-2 px-8 py-4 bg-[#fb5d00] text-black rounded-full font-bold hover:bg-[#ff7c2f] transition-transform hover:scale-105">
+                    <Link href={useAppSelector((state) => state.ui.bookingUrl)} target="_blank" className="flex items-center gap-2 px-8 py-4 bg-[#fb5d00] text-white rounded-full font-bold hover:bg-[#ff7c2f] transition-transform hover:scale-105">
                         Let's book a 1:1 Call
                         <ArrowRight className="w-5 h-5" />
                     </Link>
@@ -68,12 +66,16 @@ export default function Hero() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1, delay: 0.5 }}
-                    className="pt-12 flex flex-col items-center gap-4"
+                    className="pt-12 flex justify-center items-center gap-4"
                 >
                     <div className="flex -space-x-2">
-                        {[1, 2, 3].map((i) => (
-                            <div key={i} className="w-10 h-10 rounded-full border-2 border-background bg-gray-500 overflow-hidden relative">
-                                <div className="absolute inset-0 bg-gradient-to-br from-gray-400 to-gray-600" />
+                        {[1, 2, 3, 4].map((i) => (
+                            <div key={i} className="w-10 h-10 rounded-full border-2 border-primary overflow-hidden">
+                                <img
+                                    src={`https://i.pravatar.cc/1080?img=${i + 10}`}
+                                    alt="User"
+                                    className="w-full h-full object-cover"
+                                />
                             </div>
                         ))}
                     </div>
@@ -85,11 +87,28 @@ export default function Hero() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1, delay: 0.8 }}
-                    className="pt-16 flex flex-wrap justify-center gap-8 md:gap-16 opacity-50 grayscale"
+                    className="pt-16 relative flex overflow-hidden whitespace-nowrap [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]"
                 >
-                    {['IPCLM', 'LOHO', 'ZENN', 'IFM', 'THEN'].map((logo) => (
-                        <span key={logo} className="text-xl font-bold font-serif">{logo}</span>
-                    ))}
+                    <motion.div
+                        animate={{
+                            x: ["0%", "-50%"],
+                        }}
+                        transition={{
+                            ease: "linear",
+                            duration: 35,
+                            repeat: Infinity,
+                        }}
+                        className="flex items-center min-w-max"
+                    >
+                        {/* Repeat the logos multiple times to ensure coverage and seamless loop */}
+                        {[...Array(4)].map((_, groupIndex) => (
+                            <div key={groupIndex} className="flex items-center gap-16 pr-16">
+                                {['Zer0Byte', 'Idievo', 'PixiPair', 'TechForce', 'Codievo', 'Galazy'].map((logo, i) => (
+                                    <span key={`${groupIndex}-${i}`} className="text-xl font-bold font-serif text-gray-400">{logo}</span>
+                                ))}
+                            </div>
+                        ))}
+                    </motion.div>
                 </motion.div>
             </div>
         </section>

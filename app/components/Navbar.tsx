@@ -20,11 +20,21 @@ export default function Navbar() {
     return (
         <>
             <nav className="fixed top-6 left-0 right-0 z-50 mx-4">
-                <div className="max-w-5xl mx-auto bg-[#1C1C1C]/80 backdrop-blur-md border border-white/10 rounded-full px-6 py-3 flex items-center justify-between shadow-lg shadow-black/20">
+                <motion.div
+                    initial={{ y: -100, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{
+                        type: "spring",
+                        stiffness: 260,
+                        damping: 20,
+                        delay: 0.1
+                    }}
+                    className="max-w-5xl mx-auto bg-[#1C1C1C]/80 backdrop-blur-md border border-white/10 rounded-full px-6 py-3 flex items-center justify-between shadow-lg shadow-black/20"
+                >
                     {/* Logo */}
                     <Link href="/" className="flex items-center gap-2">
                         <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
-                            <span className="text-black font-bold text-sm">P</span>
+                            <span className="text-white font-bold text-sm">P</span>
                         </div>
                         <span className="font-bold text-white tracking-tight">Portfolio</span>
                     </Link>
@@ -47,7 +57,7 @@ export default function Navbar() {
                         <Link
                             href={useAppSelector((state) => state.ui.bookingUrl)}
                             target="_blank"
-                            className="flex items-center gap-2 px-5 py-2 bg-[#fb5d00] text-black rounded-full text-sm font-semibold hover:bg-[#ff7c2f] transition-colors"
+                            className="flex items-center gap-2 px-5 py-2 bg-[#fb5d00] text-white rounded-full text-sm font-semibold hover:bg-[#ff7c2f] transition-colors"
                         >
                             Book a Call
                         </Link>
@@ -60,7 +70,7 @@ export default function Navbar() {
                     >
                         {isOpen ? <X size={24} /> : <Menu size={24} />}
                     </button>
-                </div>
+                </motion.div>
             </nav>
 
             {/* Mobile Nav Overlay */}
@@ -85,7 +95,7 @@ export default function Navbar() {
                         <Link
                             href={useAppSelector((state) => state.ui.bookingUrl)}
                             target="_blank"
-                            className="flex items-center justify-center gap-2 px-5 py-3 bg-primary text-black rounded-full text-base font-semibold"
+                            className="flex items-center justify-center gap-2 px-5 py-3 bg-primary text-white rounded-full text-base font-semibold"
                             onClick={() => dispatch(closeMobileMenu())}
                         >
                             Let's book a 1:1 Call
