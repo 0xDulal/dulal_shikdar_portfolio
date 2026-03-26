@@ -29,14 +29,14 @@ export default function SelectedWork() {
     return (
         <section id="work" className="py-24 px-6">
             <div className="max-w-7xl mx-auto">
-                <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6 px-4">
                     <div>
-                        <h2 className="text-4xl md:text-5xl font-bold mb-4">Selected Work</h2>
-                        <p className="text-gray-400 max-w-md">
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Selected Work</h2>
+                        <p className="text-sm md:text-base text-gray-400 max-w-md">
                             We specialize in premium aesthetics for high-ticket coaches. Here is a glimpse of what is possible.
                         </p>
                     </div>
-                    <button className="flex items-center gap-2 text-primary hover:text-white transition-colors">
+                    <button className="flex items-center gap-2 text-sm md:text-base text-primary hover:text-white transition-colors">
                         View Full Portfolio <ArrowUpRight className="w-4 h-4" />
                     </button>
                 </div>

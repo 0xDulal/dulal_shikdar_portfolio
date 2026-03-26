@@ -45,13 +45,13 @@ export default function Features() {
     return (
         <section id="benefits" className="py-24 px-6 relative">
             <div className="max-w-6xl mx-auto">
-                <div className="text-center mb-16">
-                    <span className="text-xs font-bold tracking-widest text-[#fb5d00] uppercase mb-4 block">Why Work With Us</span>
-                    <h2 className="text-4xl md:text-5xl font-bold mb-4 leading-none">
+                <div className="text-center mb-16 px-4">
+                    <span className="text-[10px] md:text-xs font-bold tracking-widest text-[#fb5d00] uppercase mb-4 block">Why Work With Us</span>
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-[1.2] md:leading-none">
                         The Ecosystem for <br />
                         <span className="text-[#fb5d00]">High-Ticket Growth</span>
                     </h2>
-                    <p className="text-gray-400 max-w-2xl mx-auto">
+                    <p className="text-sm md:text-base lg:text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
                         We fuse psychology, design, and technology to build platforms that don&apos;t just exist; they sell.
                     </p>
                 </div>

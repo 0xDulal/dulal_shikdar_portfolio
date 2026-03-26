@@ -35,7 +35,7 @@ export default function Navbar() {
                 >
                     {/* Logo */}
                     <Link href="/" className="flex items-center gap-3">
-                        <div className="relative w-[200px] h-[25px]">
+                        <div className="relative w-[150px] md:w-[200px] h-[20px] md:h-[25px]">
                             <Image
                                 src="/images/Dulal_Shikdar_logo.png"
                                 alt="Dulal Shikdar Logo"

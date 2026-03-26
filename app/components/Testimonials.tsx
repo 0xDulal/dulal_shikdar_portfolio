@@ -60,8 +60,8 @@ export default function Testimonials() {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[100px] pointer-events-none" />
 
             <div className="max-w-7xl mx-auto">
-                <div className="text-center mb-16 relative z-10">
-                    <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                <div className="text-center mb-16 relative z-10 px-4">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-[1.2]">
                         Real results for <span className="text-[#fb5d00]">real coaches</span>
                     </h2>
                 </div>

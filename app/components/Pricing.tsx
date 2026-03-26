@@ -19,9 +19,9 @@ const features = [
 export default function Pricing() {
     return (
         <section id="pricing" className="py-24 px-6">
-            <div className="max-w-4xl mx-auto text-center mb-16">
-                <h2 className="text-4xl md:text-5xl font-bold mb-4">Simple, Transparent Pricing</h2>
-                <p className="text-gray-400">One comprehensive package. No hidden fees. Everything you need to scale.</p>
+            <div className="max-w-4xl mx-auto text-center mb-16 px-4">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Simple, Transparent Pricing</h2>
+                <p className="text-sm md:text-base text-gray-400">One comprehensive package. No hidden fees. Everything you need to scale.</p>
             </div>
 
             <div className="max-w-5xl mx-auto">
@@ -29,21 +29,21 @@ export default function Pricing() {
                     initial={{ opacity: 0, scale: 0.95 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
-                    className="rounded-3xl border border-white/10 bg-white/5 p-8 md:p-12 flex flex-col md:flex-row gap-12"
+                    className="rounded-3xl border border-white/10 bg-white/5 p-6 md:p-12 flex flex-col md:flex-row gap-8 md:gap-12"
                 >
                     <div className="flex-1 space-y-6">
-                        <div className="inline-block px-3 py-1 bg-[#fb5d00] text-white text-[12px] font-normal rounded mb-2">MOST POPULAR</div>
-                        <h3 className="text-3xl font-bold">The Authority Package</h3>
-                        <p className="text-gray-400 leading-relaxed">
+                        <div className="inline-block px-3 py-1 bg-[#fb5d00] text-white text-[10px] md:text-[12px] font-normal rounded mb-2">MOST POPULAR</div>
+                        <h3 className="text-2xl sm:text-3xl font-bold">The Authority Package</h3>
+                        <p className="text-sm md:text-base text-gray-400 leading-relaxed">
                             Everything you need to launch, look professional, and start booking clients immediately. We handle the tech, you handle the business.
                         </p>
 
                         <div className="pt-4">
                             <div className="flex items-baseline gap-2">
-                                <span className="text-5xl font-bold">$2,997</span>
-                                <span className="text-gray-400">one-time</span>
+                                <span className="text-4xl sm:text-5xl font-bold">$2,997</span>
+                                <span className="text-xs md:text-sm text-gray-400">one-time</span>
                             </div>
-                            <p className="text-xs text-gray-500 mt-2">Payment plans available upon request.</p>
+                            <p className="text-[10px] md:text-xs text-gray-500 mt-2">Payment plans available upon request.</p>
                         </div>
 
                         <Link
